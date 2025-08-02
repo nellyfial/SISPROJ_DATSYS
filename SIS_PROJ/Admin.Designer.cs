@@ -39,6 +39,7 @@
             btnStudent = new Button();
             btnDashboard = new Button();
             lblWelcomeAdmin = new Label();
+            panelContainer = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -152,12 +153,20 @@
             lblWelcomeAdmin.TabIndex = 1;
             lblWelcomeAdmin.Text = "Welcome Admin!";
             // 
+            // panelContainer
+            // 
+            panelContainer.Location = new Point(222, -2);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(638, 471);
+            panelContainer.TabIndex = 1;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(860, 469);
+            Controls.Add(panelContainer);
             Controls.Add(panel1);
             Name = "Admin";
             Text = "Admin";
@@ -180,5 +189,6 @@
         private Button btnReports;
         private Button btnLogs;
         private Button btnSubject;
+        private Panel panelContainer;
     }
 }

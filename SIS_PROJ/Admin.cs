@@ -37,9 +37,16 @@ namespace SIS_PROJ
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            StudentForm.Visible = true;
-            StudentForm.Dock = DockStyle.Left;
-            TeacherForm.Visible = false;
+            StudentForm studentForm = new StudentForm();
+            studentForm.Dock = DockStyle.Fill;
+            studentForm.Margin = new Padding(0);
+            studentForm.Padding = new Padding(0);
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(studentForm);
+
+            studentForm.Size = panelContainer.ClientSize;
+
         }
 
         private void btnTeacher_Click(object sender, EventArgs e)

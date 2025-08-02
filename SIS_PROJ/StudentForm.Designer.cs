@@ -28,44 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            panelAddStudent = new Panel();
+            dtpEnrollDate = new DateTimePicker();
+            lblEnrollmentDate = new Label();
+            lblGender = new Label();
+            lblDateofBirth = new Label();
+            cmbGender = new ComboBox();
+            dtpDOB = new DateTimePicker();
             btmCancel = new Button();
             btnSave = new Button();
             txtStatus = new TextBox();
-            txtEnrollmentDate = new TextBox();
             txtAddress = new TextBox();
             txtPhone = new TextBox();
             txtEmail = new TextBox();
-            txtGender = new TextBox();
-            txtDateBirth = new TextBox();
             txtLastName = new TextBox();
             txtFirstName = new TextBox();
-            textBox1 = new TextBox();
+            txtStudentID = new TextBox();
             label1 = new Label();
-            panel1.SuspendLayout();
+            btnAddNew = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
+            dgvStudents = new DataGridView();
+            panelAddStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudents).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panelAddStudent
             // 
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(btmCancel);
-            panel1.Controls.Add(btnSave);
-            panel1.Controls.Add(txtStatus);
-            panel1.Controls.Add(txtEnrollmentDate);
-            panel1.Controls.Add(txtAddress);
-            panel1.Controls.Add(txtPhone);
-            panel1.Controls.Add(txtEmail);
-            panel1.Controls.Add(txtGender);
-            panel1.Controls.Add(txtDateBirth);
-            panel1.Controls.Add(txtLastName);
-            panel1.Controls.Add(txtFirstName);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(578, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(300, 516);
-            panel1.TabIndex = 0;
+            panelAddStudent.BorderStyle = BorderStyle.Fixed3D;
+            panelAddStudent.Controls.Add(dtpEnrollDate);
+            panelAddStudent.Controls.Add(lblEnrollmentDate);
+            panelAddStudent.Controls.Add(lblGender);
+            panelAddStudent.Controls.Add(lblDateofBirth);
+            panelAddStudent.Controls.Add(cmbGender);
+            panelAddStudent.Controls.Add(dtpDOB);
+            panelAddStudent.Controls.Add(btmCancel);
+            panelAddStudent.Controls.Add(btnSave);
+            panelAddStudent.Controls.Add(txtStatus);
+            panelAddStudent.Controls.Add(txtAddress);
+            panelAddStudent.Controls.Add(txtPhone);
+            panelAddStudent.Controls.Add(txtEmail);
+            panelAddStudent.Controls.Add(txtLastName);
+            panelAddStudent.Controls.Add(txtFirstName);
+            panelAddStudent.Controls.Add(txtStudentID);
+            panelAddStudent.Controls.Add(label1);
+            panelAddStudent.Dock = DockStyle.Right;
+            panelAddStudent.Location = new Point(578, 0);
+            panelAddStudent.Name = "panelAddStudent";
+            panelAddStudent.Size = new Size(300, 516);
+            panelAddStudent.TabIndex = 0;
+            panelAddStudent.Visible = false;
+            // 
+            // dtpEnrollDate
+            // 
+            dtpEnrollDate.CalendarFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpEnrollDate.Location = new Point(130, 333);
+            dtpEnrollDate.Name = "dtpEnrollDate";
+            dtpEnrollDate.Size = new Size(128, 27);
+            dtpEnrollDate.TabIndex = 28;
+            // 
+            // lblEnrollmentDate
+            // 
+            lblEnrollmentDate.AutoSize = true;
+            lblEnrollmentDate.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEnrollmentDate.Location = new Point(24, 341);
+            lblEnrollmentDate.Name = "lblEnrollmentDate";
+            lblEnrollmentDate.Size = new Size(100, 16);
+            lblEnrollmentDate.TabIndex = 27;
+            lblEnrollmentDate.Text = "EnrollmentDate:";
+            // 
+            // lblGender
+            // 
+            lblGender.AutoSize = true;
+            lblGender.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGender.Location = new Point(27, 202);
+            lblGender.Name = "lblGender";
+            lblGender.Size = new Size(53, 16);
+            lblGender.TabIndex = 26;
+            lblGender.Text = "Gender:";
+            // 
+            // lblDateofBirth
+            // 
+            lblDateofBirth.AutoSize = true;
+            lblDateofBirth.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDateofBirth.Location = new Point(24, 169);
+            lblDateofBirth.Name = "lblDateofBirth";
+            lblDateofBirth.Size = new Size(75, 16);
+            lblDateofBirth.TabIndex = 25;
+            lblDateofBirth.Text = "DateofBirth:";
+            // 
+            // cmbGender
+            // 
+            cmbGender.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbGender.FormattingEnabled = true;
+            cmbGender.Items.AddRange(new object[] { "Male", "Female", "Others" });
+            cmbGender.Location = new Point(105, 198);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(153, 25);
+            cmbGender.TabIndex = 24;
+            // 
+            // dtpDOB
+            // 
+            dtpDOB.CalendarFont = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDOB.Location = new Point(105, 161);
+            dtpDOB.Name = "dtpDOB";
+            dtpDOB.Size = new Size(153, 27);
+            dtpDOB.TabIndex = 23;
             // 
             // btmCancel
             // 
@@ -76,6 +144,7 @@
             btmCancel.TabIndex = 22;
             btmCancel.Text = "Cancel";
             btmCancel.UseVisualStyleBackColor = false;
+            btmCancel.Click += btmCancel_Click;
             // 
             // btnSave
             // 
@@ -87,96 +156,70 @@
             btnSave.TabIndex = 21;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // txtStatus
             // 
             txtStatus.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtStatus.Location = new Point(46, 374);
+            txtStatus.Location = new Point(27, 374);
             txtStatus.Name = "txtStatus";
             txtStatus.PlaceholderText = "Status:";
-            txtStatus.Size = new Size(212, 22);
+            txtStatus.Size = new Size(231, 22);
             txtStatus.TabIndex = 20;
-            // 
-            // txtEnrollmentDate
-            // 
-            txtEnrollmentDate.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEnrollmentDate.Location = new Point(46, 336);
-            txtEnrollmentDate.Name = "txtEnrollmentDate";
-            txtEnrollmentDate.PlaceholderText = "EnrollmentDate:";
-            txtEnrollmentDate.Size = new Size(212, 22);
-            txtEnrollmentDate.TabIndex = 19;
             // 
             // txtAddress
             // 
             txtAddress.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAddress.Location = new Point(46, 298);
+            txtAddress.Location = new Point(27, 298);
             txtAddress.Name = "txtAddress";
             txtAddress.PlaceholderText = "Address:";
-            txtAddress.Size = new Size(212, 22);
+            txtAddress.Size = new Size(231, 22);
             txtAddress.TabIndex = 18;
             // 
             // txtPhone
             // 
             txtPhone.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPhone.Location = new Point(46, 265);
+            txtPhone.Location = new Point(27, 265);
             txtPhone.Name = "txtPhone";
             txtPhone.PlaceholderText = "Phone:";
-            txtPhone.Size = new Size(212, 22);
+            txtPhone.Size = new Size(231, 22);
             txtPhone.TabIndex = 17;
             // 
             // txtEmail
             // 
             txtEmail.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(46, 232);
+            txtEmail.Location = new Point(27, 232);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email:";
-            txtEmail.Size = new Size(212, 22);
+            txtEmail.Size = new Size(231, 22);
             txtEmail.TabIndex = 16;
-            // 
-            // txtGender
-            // 
-            txtGender.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtGender.Location = new Point(46, 199);
-            txtGender.Name = "txtGender";
-            txtGender.PlaceholderText = "Gender:";
-            txtGender.Size = new Size(212, 22);
-            txtGender.TabIndex = 15;
-            // 
-            // txtDateBirth
-            // 
-            txtDateBirth.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDateBirth.Location = new Point(46, 166);
-            txtDateBirth.Name = "txtDateBirth";
-            txtDateBirth.PlaceholderText = "DateBirth:";
-            txtDateBirth.Size = new Size(212, 22);
-            txtDateBirth.TabIndex = 14;
             // 
             // txtLastName
             // 
             txtLastName.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtLastName.Location = new Point(46, 133);
+            txtLastName.Location = new Point(27, 133);
             txtLastName.Name = "txtLastName";
             txtLastName.PlaceholderText = "LastName:";
-            txtLastName.Size = new Size(212, 22);
+            txtLastName.Size = new Size(231, 22);
             txtLastName.TabIndex = 13;
             // 
             // txtFirstName
             // 
             txtFirstName.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFirstName.Location = new Point(46, 100);
+            txtFirstName.Location = new Point(27, 100);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.PlaceholderText = "FirstName:";
-            txtFirstName.Size = new Size(212, 22);
+            txtFirstName.Size = new Size(231, 22);
             txtFirstName.TabIndex = 12;
             // 
-            // textBox1
+            // txtStudentID
             // 
-            textBox1.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(46, 67);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "StudentID:";
-            textBox1.Size = new Size(212, 22);
-            textBox1.TabIndex = 11;
+            txtStudentID.Font = new Font("Arial", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtStudentID.Location = new Point(27, 67);
+            txtStudentID.Name = "txtStudentID";
+            txtStudentID.PlaceholderText = "StudentID:";
+            txtStudentID.Size = new Size(231, 22);
+            txtStudentID.TabIndex = 11;
             // 
             // label1
             // 
@@ -188,34 +231,93 @@
             label1.TabIndex = 0;
             label1.Text = "Add New Student Info";
             // 
+            // btnAddNew
+            // 
+            btnAddNew.BackColor = Color.ForestGreen;
+            btnAddNew.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddNew.Location = new Point(44, 428);
+            btnAddNew.Name = "btnAddNew";
+            btnAddNew.Size = new Size(114, 55);
+            btnAddNew.TabIndex = 23;
+            btnAddNew.Text = "Add New";
+            btnAddNew.UseVisualStyleBackColor = false;
+            btnAddNew.Click += btnAddNew_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.DarkOrange;
+            btnUpdate.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(226, 428);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(114, 55);
+            btnUpdate.TabIndex = 24;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Red;
+            btnDelete.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(403, 431);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(114, 55);
+            btnDelete.TabIndex = 25;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // dgvStudents
+            // 
+            dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStudents.Location = new Point(20, 19);
+            dgvStudents.Name = "dgvStudents";
+            dgvStudents.RowHeadersWidth = 51;
+            dgvStudents.Size = new Size(535, 379);
+            dgvStudents.TabIndex = 26;
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            Controls.Add(panel1);
+            Controls.Add(dgvStudents);
+            Controls.Add(btnDelete);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnAddNew);
+            Controls.Add(panelAddStudent);
+            Margin = new Padding(0);
             Name = "StudentForm";
             Size = new Size(878, 516);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += StudentForm_Load;
+            panelAddStudent.ResumeLayout(false);
+            panelAddStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudents).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelAddStudent;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtStudentID;
         private TextBox txtStatus;
-        private TextBox txtEnrollmentDate;
         private TextBox txtAddress;
         private TextBox txtPhone;
         private TextBox txtEmail;
-        private TextBox txtGender;
-        private TextBox txtDateBirth;
         private TextBox txtLastName;
         private TextBox txtFirstName;
         private Button btnSave;
         private Button btmCancel;
+        private Button btnAddNew;
+        private Button btnUpdate;
+        private Button btnDelete;
+        private DataGridView dgvStudents;
+        private DateTimePicker dtpDOB;
+        private Label lblDateofBirth;
+        private ComboBox cmbGender;
+        private Label lblGender;
+        private DateTimePicker dtpEnrollDate;
+        private Label lblEnrollmentDate;
     }
 }
