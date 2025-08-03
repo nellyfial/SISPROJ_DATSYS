@@ -40,8 +40,11 @@
             btnDashboard = new Button();
             lblWelcomeAdmin = new Label();
             panelContainer = new Panel();
+            textBox1 = new TextBox();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -155,10 +158,29 @@
             // 
             // panelContainer
             // 
-            panelContainer.Location = new Point(222, -2);
+            panelContainer.BorderStyle = BorderStyle.Fixed3D;
+            panelContainer.Location = new Point(222, 55);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(638, 471);
+            panelContainer.Size = new Size(626, 403);
             panelContainer.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(670, 16);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search";
+            textBox1.Size = new Size(178, 27);
+            textBox1.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(639, 16);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(25, 27);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // Admin
             // 
@@ -166,6 +188,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(860, 469);
+            Controls.Add(pictureBox2);
+            Controls.Add(textBox1);
             Controls.Add(panelContainer);
             Controls.Add(panel1);
             Name = "Admin";
@@ -174,7 +198,9 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -190,5 +216,7 @@
         private Button btnLogs;
         private Button btnSubject;
         private Panel panelContainer;
+        private TextBox textBox1;
+        private PictureBox pictureBox2;
     }
 }
