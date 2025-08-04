@@ -15,7 +15,7 @@ namespace SIS_PROJ
     {
         private bool isUpdateMode = false;
         private int selectedStudentId = -1;
-        string connectionString = "Data Source=5lgo8sik\\SQLEXPRESS;Initial Catalog=SIS;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = "Data Source=LAB4-PC15\\LAB3PC31;Initial Catalog=SIS;Integrated Security=True;TrustServerCertificate=True";
         public StudentForm()
         {
             InitializeComponent();

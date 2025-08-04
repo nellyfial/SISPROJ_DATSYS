@@ -41,9 +41,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-51, -16);
+            pictureBox1.Location = new Point(-45, -12);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(579, 492);
+            pictureBox1.Size = new Size(465, 377);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -53,9 +54,9 @@
             lblWELCOME.AutoSize = true;
             lblWELCOME.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWELCOME.ForeColor = Color.RoyalBlue;
-            lblWELCOME.Location = new Point(534, 62);
+            lblWELCOME.Location = new Point(464, 46);
             lblWELCOME.Name = "lblWELCOME";
-            lblWELCOME.Size = new Size(276, 42);
+            lblWELCOME.Size = new Size(220, 33);
             lblWELCOME.TabIndex = 1;
             lblWELCOME.Text = "Welcome to SIS";
             // 
@@ -64,28 +65,30 @@
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = Color.Black;
-            lblLogin.Location = new Point(613, 118);
+            lblLogin.Location = new Point(520, 90);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(130, 28);
+            lblLogin.Size = new Size(106, 23);
             lblLogin.TabIndex = 2;
             lblLogin.Text = "Login now!";
             // 
             // txtUsername
             // 
             txtUsername.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsername.Location = new Point(573, 193);
+            txtUsername.Location = new Point(485, 143);
+            txtUsername.Margin = new Padding(3, 2, 3, 2);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "Username:";
-            txtUsername.Size = new Size(209, 25);
+            txtUsername.Size = new Size(183, 21);
             txtUsername.TabIndex = 3;
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(573, 256);
+            txtPassword.Location = new Point(485, 193);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Password:";
-            txtPassword.Size = new Size(209, 25);
+            txtPassword.Size = new Size(183, 21);
             txtPassword.TabIndex = 4;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -93,9 +96,10 @@
             // 
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.Location = new Point(614, 330);
+            btnLogin.Location = new Point(520, 246);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(129, 56);
+            btnLogin.Size = new Size(113, 42);
             btnLogin.TabIndex = 5;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -103,10 +107,10 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            ClientSize = new Size(856, 465);
+            ClientSize = new Size(749, 349);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
@@ -114,6 +118,7 @@
             Controls.Add(lblWELCOME);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
