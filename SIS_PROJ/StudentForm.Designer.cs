@@ -73,10 +73,10 @@
             panelAddStudent.Controls.Add(txtStudentID);
             panelAddStudent.Controls.Add(label1);
             panelAddStudent.Dock = DockStyle.Right;
-            panelAddStudent.Location = new Point(505, 0);
+            panelAddStudent.Location = new Point(285, 0);
             panelAddStudent.Margin = new Padding(3, 2, 3, 2);
             panelAddStudent.Name = "panelAddStudent";
-            panelAddStudent.Size = new Size(263, 391);
+            panelAddStudent.Size = new Size(263, 303);
             panelAddStudent.TabIndex = 0;
             panelAddStudent.Visible = false;
             // 
@@ -248,7 +248,7 @@
             // 
             btnDelete.BackColor = Color.Red;
             btnDelete.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(390, 251);
+            btnDelete.Location = new Point(401, 251);
             btnDelete.Margin = new Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(110, 33);
@@ -305,7 +305,7 @@
             Controls.Add(panelAddStudent);
             Margin = new Padding(0);
             Name = "StudentForm";
-            Size = new Size(768, 391);
+            Size = new Size(548, 303);
             Load += StudentForm_Load;
             panelAddStudent.ResumeLayout(false);
             panelAddStudent.PerformLayout();

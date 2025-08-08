@@ -15,7 +15,7 @@ namespace SIS_PROJ
     {
         private bool isUpdateMode = false;
         private int selectedStudentId = -1;
-        string connectionString = "Data Source=LAB4-PC15\\LAB3PC31;Initial Catalog=SIS;Integrated Security=True;TrustServerCertificate=True";
+        string connectionString = "Data Source=LAB4-PC15\\LAB3PC31;Initial Catalog=sis;Integrated Security=True;TrustServerCertificate=True";
         public StudentForm()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace SIS_PROJ
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT student_id, first_name, last_name, date_of_birth, gender, email, phone, address, enrollment_date, status FROM student";
+                string query = "SELECT * From Student Order by student_id desc";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
@@ -103,6 +103,20 @@ namespace SIS_PROJ
                 }
                 else
                 {
+                    string insertQueryUserlogin = @"INSERT INTO user_login(user_id, username, password_hash, role_id) VALUES (@user_id, @username, @password_hash, @role_id)";
+
+                    using (SqlCommand cmd = new SqlCommand(insertQueryUserlogin, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@user_id", int.Parse(txtStudentID.Text));
+                        cmd.Parameters.AddWithValue("@username", txtFirstName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@password_hash", txtLastName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@role_id", 2); // fixed role_id for student
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Student added successfully!", "Insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+
                     // INSERT new student
                     string insertQuery = @"INSERT INTO student 
                 (student_id, first_name, last_name, date_of_birth, gender, email, phone, address, enrollment_date, status, role_id) 

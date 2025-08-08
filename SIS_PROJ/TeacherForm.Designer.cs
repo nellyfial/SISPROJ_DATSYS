@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panelAddTeacher = new Panel();
-            btnDelete = new Button();
             txtDepartment = new TextBox();
             dtpHireDate = new DateTimePicker();
             lblHireDate = new Label();
@@ -43,6 +42,7 @@
             txtFirstName = new TextBox();
             txtTeacherID = new TextBox();
             lblAddNewTeacher = new Label();
+            btnDelete = new Button();
             dgvTeachers = new DataGridView();
             btnAddNew = new Button();
             btnUpdate = new Button();
@@ -53,7 +53,6 @@
             // panelAddTeacher
             // 
             panelAddTeacher.BorderStyle = BorderStyle.Fixed3D;
-            panelAddTeacher.Controls.Add(btnDelete);
             panelAddTeacher.Controls.Add(txtDepartment);
             panelAddTeacher.Controls.Add(dtpHireDate);
             panelAddTeacher.Controls.Add(lblHireDate);
@@ -68,24 +67,12 @@
             panelAddTeacher.Controls.Add(txtTeacherID);
             panelAddTeacher.Controls.Add(lblAddNewTeacher);
             panelAddTeacher.Dock = DockStyle.Right;
-            panelAddTeacher.Location = new Point(505, 0);
+            panelAddTeacher.Location = new Point(285, 0);
             panelAddTeacher.Margin = new Padding(3, 2, 3, 2);
             panelAddTeacher.Name = "panelAddTeacher";
-            panelAddTeacher.Size = new Size(263, 391);
+            panelAddTeacher.Size = new Size(263, 303);
             panelAddTeacher.TabIndex = 1;
             panelAddTeacher.Visible = false;
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.Red;
-            btnDelete.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(99, 259);
-            btnDelete.Margin = new Padding(3, 2, 3, 2);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(110, 33);
-            btnDelete.TabIndex = 26;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
             // 
             // txtDepartment
             // 
@@ -221,6 +208,18 @@
             lblAddNewTeacher.TabIndex = 0;
             lblAddNewTeacher.Text = "Add New Teacher Info";
             // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Red;
+            btnDelete.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.Location = new Point(389, 261);
+            btnDelete.Margin = new Padding(3, 2, 3, 2);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(110, 33);
+            btnDelete.TabIndex = 26;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
             // dgvTeachers
             // 
             dgvTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -233,7 +232,7 @@
             // 
             btnAddNew.BackColor = Color.ForestGreen;
             btnAddNew.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddNew.Location = new Point(45, 261);
+            btnAddNew.Location = new Point(47, 261);
             btnAddNew.Margin = new Padding(3, 2, 3, 2);
             btnAddNew.Name = "btnAddNew";
             btnAddNew.Size = new Size(110, 33);
@@ -260,13 +259,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
+            Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnAddNew);
             Controls.Add(dgvTeachers);
             Controls.Add(panelAddTeacher);
             Margin = new Padding(3, 2, 3, 2);
             Name = "TeacherForm";
-            Size = new Size(768, 391);
+            Size = new Size(548, 303);
             Load += TeacherForm_Load;
             panelAddTeacher.ResumeLayout(false);
             panelAddTeacher.PerformLayout();

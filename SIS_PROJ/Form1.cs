@@ -15,7 +15,7 @@ namespace SIS_PROJ
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            string connectionString = "Data Source=LAB4-PC15\\LAB3PC31;Initial Catalog=SIS;Integrated Security=True;TrustServerCertificate=True";
+            string connectionString = "Data Source=LAB4-PC15\\LAB3PC31;Initial Catalog=sis;Integrated Security=True;TrustServerCertificate=True";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
